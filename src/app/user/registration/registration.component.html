@@ -1,21 +1,54 @@
-<a href="#" class="btn btn-link text-secondary text-sm-left" style="text-decoration: none; font-family:  Poppins-Medium" data-toggle="modal" data-target="#exampleModal">Don't have an account?<span class="text-success"> Sign up</span></a>
+<a href="#" class="btn btn-link text-secondary text-sm-left" style="text-decoration: none; font-family:  Poppins-Medium"
+  data-toggle="modal" data-target="#exampleModal">Don't have an account?<span class="text-success"> Sign up</span></a>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">User Registration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Registration</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userRegistrationForm">
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="First Name" formControlName="firstname">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Last Name" formControlName="lastname">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" placeholder="Email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="Confirm Password" formControlName="password">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" placeholder="Mobile Number" formControlName="mobilenumber">
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">Male
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+              value="female">Female
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+              value="others">Others
+          </div>
+          <div>
+            <select class="form-control" formControlName="group">
+              <option>select</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="RegisterUser()">Save changes</button>
+      </div>
     </div>
+  </div>
 </div>
